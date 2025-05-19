@@ -1,0 +1,34 @@
+<!-- incharge-dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div style="text-align: center;">
+    <h1>Hearty Welcome..!</h1>
+    <p style="color: red; font-size: 14px;">NOTE - Enter date in YYYY-MM-DD format</p>
+    <label for="searchOption">Search by:</label>
+    <select id="searchOption">
+      <option value="company">Company Name</option>
+      <option value="roomNo">Room Number</option>
+      <option value="name">Guest Name</option>
+      <option value="date">Date</option>
+      <option value="officer">Recommending Officer Name</option>
+    </select>
+
+    <input type="text" id="searchInput" placeholder="Enter value">
+    <button id="searchBtn">Search</button>
+
+    <div id="result"></div>
+    <button id="guestsAvailable"><b>Show Available Guests</b></button>
+    <button id="guestsAll"><b>Show All Guests</b></button>
+  </div>
+  <div id="guestContainer"></div>
+  <script src="show-data.js"></script>
+  <script src="show-data-app.js"></script>
+  <script src="search-data.js"></script>
+</body>
+</html>

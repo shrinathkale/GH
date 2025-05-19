@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guest House - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Welcome to the Guest House</h1>
+  <form id="guest-form" class="form">
+    <h2>Guest Information</h2>
+    <h3>Number of Guests</h3>
+    <input type="number" id="memberCount" name="memberCount" min="0" placeholder="Number of guests" value="">
+    <div id="membersContainer"></div>
+    <h3>Company Name</h3>
+    <input type="text" name="company" placeholder="Company Name" value="" required>
+    <h3>Purpose of Visit</h3>
+    <textarea name="purpose" placeholder="Purpose of Visit" required></textarea>
+    <h3>Stay</h3>
+    <p>From</p>
+    <input type="date" name="checkIn" placeholder="Check-in Date" value="" required>
+    <p>To</p>
+    <input type="date" name="checkOut" placeholder="Check-out Date" value="">
+    <h3>Room Number</h3>
+    <input type="number" name="roomNo" placeholder="Room Number" value="" required>
+    <h3>Recommending Officer Name</h3>
+    <input type="text" name="officer" placeholder="Recommmending Officer Name" value="" required>
+    <button class="endbutton" type="submit">Submit</button>
+  </form>
+
+  <div class="logins">
+    <a href="show-guests.html" class="il"><span class="sg">Show Guests</span></a>
+    <a href="update-front.html" class="el"><span class="sg">Leave Guest</span></a>
+    <a href="vaccancy-front.html" class="vl"><span class="sg">Check Vaccancy</span></a>
+  </div>
+  <script src="script.js"></script>
+  <script src="insert-data.js"></script>
+  <script src="insert-data-app.js"></script>
+</body>
+</html>
