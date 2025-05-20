@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Login Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,6 +12,8 @@
     <h1>Hearty Welcome..!</h1>
     <p style="color: red; font-size: 14px;">NOTE - Enter date in YYYY-MM-DD format</p>
     <label for="searchOption">Search by:</label>
+    <br>
+    <br>
     <select id="searchOption">
       <option value="company">Company Name</option>
       <option value="roomNo">Room Number</option>
@@ -18,12 +21,17 @@
       <option value="date">Date</option>
       <option value="officer">Recommending Officer Name</option>
     </select>
-
+    <br>
+    <br>
     <input type="text" id="searchInput" placeholder="Enter value">
+    <br>
+    <br>
     <button id="searchBtn">Search</button>
 
     <div id="result"></div>
     <button id="guestsAvailable"><b>Show Available Guests</b></button>
+    <br>
+    <br>
     <button id="guestsAll"><b>Show All Guests</b></button>
   </div>
   <div id="guestContainer"></div>
