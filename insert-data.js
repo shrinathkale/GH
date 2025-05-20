@@ -25,7 +25,7 @@ document.getElementById('guest-form').addEventListener('submit', async function(
     officer: formData.get('officer').toLowerCase().trim(),
   };
 
-  const response = await fetch('https://gh-98vt.onrender.com/api/submit-guest', {
+  const response = await fetch('https://gh-pqpi.onrender.com/api/submit-guest', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
