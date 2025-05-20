@@ -1,6 +1,6 @@
 (async () => {
   try {
-    const res = await fetch('https://gh-98vt.onrender.com/api/get-guests');
+    const res = await fetch('https://gh-pqpi.onrender.com/api/get-guests');
     const data = await res.json();
 
     // Define total beds for each room
