@@ -2,37 +2,31 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
-require("dotenv").config();
 
-const envPath = path.resolve(__dirname, '.env');
+const configPath = path.resolve(__dirname, 'config.json');
 
 // POST /api/auth/change
 router.post('/change', (req, res) => {
   const { oldUsername, oldPassword, newPassword, key } = req.body;
 
+  // Load current credentials
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+
   // Validate old credentials
-  if (oldUsername === process.env.USERNAME && oldPassword === process.env.PASSWORD && key === process.env.KEY) {
-    // Read current .env file
-    fs.readFile(envPath, 'utf8', (err, data) => {
+  if (oldUsername === config.username && oldPassword === config.password && key === config.key) {
+    // Update password
+    config.password = newPassword;
+
+    // Save updated credentials
+    fs.writeFile(configPath, JSON.stringify(config, null, 2), 'utf8', (err) => {
       if (err) {
-        return res.status(500).json({ error: 'Failed to read environment file' });
+        return res.status(500).json({ error: 'Failed to update credentials' });
       }
 
-      // Replace old username and password
-      let updatedEnv = data
-        .replace(/PASSWORD=.*/g, `PASSWORD=${newPassword}`);
-
-      // Write updated content back to .env file
-      fs.writeFile(envPath, updatedEnv, 'utf8', (err) => {
-        if (err) {
-          return res.status(500).json({ error: 'Failed to write environment file' });
-        }
-
-        return res.json({ message: 'Credentials updated successfully. Please restart the server for changes to take effect.' });
-      });
+      return res.json({ message: 'Password updated successfully' });
     });
   } else {
-    return res.status(401).json({ error: 'Invalid old username or password or key' });
+    return res.status(401).json({ error: 'Invalid credentials or key' });
   }
 });
 
