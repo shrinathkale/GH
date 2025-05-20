@@ -11,7 +11,7 @@ document.getElementById('searchBtn').addEventListener('click', async () => {
   }
 
   try {
-    const res = await fetch('http://localhost:3000/api/get-guestsAll');
+    const res = await fetch('https://gh-98vt.onrender.com/api/get-guestsAll');
     const data = await res.json();
 
     const matchedGuests = data.filter(guest => {
