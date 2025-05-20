@@ -8,7 +8,7 @@ document.getElementById("in-form").addEventListener("submit", async function (e)
   const password = formData.get("password");
 
   try {
-    const response = await fetch("https://gh-98vt.onrender.com/api/login", {
+    const response = await fetch("https://gh-pqpi.onrender.com/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password })
