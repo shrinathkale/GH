@@ -1,6 +1,6 @@
 document.getElementById('guestsAvailable').addEventListener('click', async () => {
     try {
-      const res = await fetch('https://gh-98vt.onrender.com/api/get-guests'); // adjust port if needed
+      const res = await fetch('https://gh-pqpi.onrender.com/api/get-guests'); // adjust port if needed
       const data = await res.json();
 
       const list = document.getElementById("guestContainer");
@@ -50,7 +50,7 @@ document.getElementById('guestsAvailable').addEventListener('click', async () =>
 
 document.getElementById('guestsAll').addEventListener('click', async () => {
     try {
-      const res = await fetch('https://gh-98vt.onrender.com/api/get-guestsAll'); // adjust port if needed
+      const res = await fetch('https://gh-pqpi.onrender.com/api/get-guestsAll'); // adjust port if needed
       const data = await res.json();
 
       const list = document.getElementById("guestContainer");
