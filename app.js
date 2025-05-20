@@ -40,13 +40,11 @@ const loginRoute = require('./login-back');
 const insertRoute = require('./insert-data-app');
 const showRoute = require('./show-data-app');
 const updateRoute = require('./update-data-app');
-const changeRoute = require('./change-back');
 
 app.use("/api", loginRoute);
 app.use("/api", insertRoute);
 app.use("/api", showRoute);
 app.use("/api", updateRoute);
-app.use("/api", changeRoute);
 
 const port = process.env.PORT;
 

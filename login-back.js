@@ -2,16 +2,11 @@
 const express = require('express');
 const router = express.Router();
 require("dotenv").config();
-const fs = require('fs');
-const path = require('path');
-
-const configPath = path.resolve(__dirname, 'config.json');
-const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 // Fixed credentials
 const fixedIncharge = {
-  username: config.username,
-  password: config.password
+  username: process.env.USERNAME,
+  password: process.env.PASSWORD
 };
 
 // POST /api/auth/login-incharge
