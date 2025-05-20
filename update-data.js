@@ -10,7 +10,7 @@ document.getElementById('update-form').addEventListener('submit', async function
   };
 
   try{
-    const response = await fetch(`http://localhost:3000/api/update-guest`, {
+    const response = await fetch(`https://gh-98vt.onrender.com/api/update-guest`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
